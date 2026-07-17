@@ -1,0 +1,113 @@
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at 50% 50%, var(--primary-light) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--fg-primary) 30%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--fg-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  border-left: 4px solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.toolCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: var(--fg-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.difficulty {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background-color: var(--bg-tertiary);
+  color: var(--fg-secondary);
+}
+
+.difficulty.Easy {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.difficulty.Medium {
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+
+.difficulty.Hard {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.learnMore {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}

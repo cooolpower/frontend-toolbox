@@ -1,0 +1,204 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fg-secondary);
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--fg-primary);
+}
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--fg-secondary);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: var(--fg-tertiary);
+}
+
+/* Tool Page Specific Layout */
+.toolLayout {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toolTitle {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.toolDesc {
+  font-size: 1.125rem;
+  color: var(--fg-secondary);
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+
+.seoSection {
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.seoGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .seoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guideContent h2 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.guideContent p, .guideContent li {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.guideContent ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faqItem {
+  margin-bottom: 1.5rem;
+}
+
+.faqQuestion {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--fg-primary);
+}
+
+.faqAnswer {
+  font-size: 0.925rem;
+  color: var(--fg-secondary);
+  line-height: 1.5;
+}
+
+.themeToggle {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.375rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--fg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.themeToggle:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--fg-primary);
+}
+
+.languageToggleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  height: 30px;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--fg-tertiary);
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.langBtn:hover {
+  color: var(--fg-primary);
+}
+
+.activeLang {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.divider {
+  color: var(--border);
+  user-select: none;
+}

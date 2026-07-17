@@ -1,0 +1,40 @@
+.wrapper {
+  position: relative;
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border);
+}
+
+.language {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--fg-secondary);
+}
+
+.pre {
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--fg-primary);
+  max-height: 500px;
+}
+
+.code {
+  font-family: var(--font-mono);
+  white-space: pre-wrap;
+  word-break: break-all;
+}

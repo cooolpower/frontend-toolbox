@@ -1,0 +1,49 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--fg-secondary);
+  border-radius: 6px;
+  padding: 0.375rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 0.25rem;
+  user-select: none;
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--border);
+  color: var(--fg-primary);
+  transform: scale(1.02);
+}
+
+.success {
+  background-color: var(--success-light);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.success:hover {
+  background-color: var(--success-light) !important;
+  color: var(--success) !important;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.iconSvg {
+  animation: pop 0.2s ease-out;
+}
