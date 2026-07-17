@@ -149,8 +149,7 @@
   align-items: center;
   justify-content: center;
   animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  flex: 1 1 100px;
-  max-width: 150px;
+  flex: 0 0 auto;
 }
 
 @keyframes popIn {
