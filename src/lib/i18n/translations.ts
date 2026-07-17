@@ -59,6 +59,8 @@ export const translations = {
       previewBoard: "Interactive Live Preview",
       codeTitle: "Generated CSS Code",
       itemLabel: "Item",
+      itemWidth: "Item Width (px)",
+      itemHeight: "Item Height (px)",
     },
     jwtDecoder: {
       tokenLabel: "JWT Token Input",
@@ -140,6 +142,8 @@ export const translations = {
       previewBoard: "인터랙티브 실시간 프리뷰",
       codeTitle: "생성된 CSS 코드",
       itemLabel: "아이템",
+      itemWidth: "아이템 가로 크기 (px)",
+      itemHeight: "아이템 세로 크기 (px)",
     },
     jwtDecoder: {
       tokenLabel: "JWT 토큰 입력",

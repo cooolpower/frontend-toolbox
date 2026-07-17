@@ -19,6 +19,10 @@ export function LayoutBuilderTool(): ReactNode {
   const [itemCount, setItemCount] = useState(6);
   const [gap, setGap] = useState(16);
 
+  // Width & Height control states
+  const [itemWidth, setItemWidth] = useState(120);
+  const [itemHeight, setItemHeight] = useState(60);
+
   // Flexbox States
   const [flexDirection, setFlexDirection] = useState("row");
   const [flexWrap, setFlexWrap] = useState("wrap");
@@ -42,12 +46,14 @@ export function LayoutBuilderTool(): ReactNode {
   gap: ${gap}px;
 }
 .item {
-  padding: 1.5rem;
+  width: ${itemWidth}px;
+  height: ${itemHeight}px;
   background: linear-gradient(135deg, var(--primary), #8b5cf6);
   color: white;
   border-radius: 8px;
-  min-width: 100px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }`;
     } else {
       return `.container {
@@ -59,11 +65,15 @@ export function LayoutBuilderTool(): ReactNode {
   gap: ${gap}px;
 }
 .item {
-  padding: 1.5rem;
+  width: ${justifyItems === "stretch" ? "auto" : `${itemWidth}px`};
+  height: ${alignItemsGrid === "stretch" ? "auto" : `${itemHeight}px`};
+  min-height: ${itemHeight}px;
   background: linear-gradient(135deg, var(--primary), #8b5cf6);
   color: white;
   border-radius: 8px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }`;
     }
   };
@@ -92,9 +102,26 @@ export function LayoutBuilderTool(): ReactNode {
     }
   };
 
+  const getItemStyle = () => {
+    if (layoutType === "flex") {
+      return {
+        width: `${itemWidth}px`,
+        height: `${itemHeight}px`,
+      };
+    } else {
+      return {
+        width: justifyItems === "stretch" ? "auto" : `${itemWidth}px`,
+        height: alignItemsGrid === "stretch" ? "auto" : `${itemHeight}px`,
+        minHeight: `${itemHeight}px`,
+      };
+    }
+  };
+
   const handleReset = () => {
     setItemCount(6);
     setGap(16);
+    setItemWidth(120);
+    setItemHeight(60);
     setFlexDirection("row");
     setFlexWrap("wrap");
     setJustifyContent("center");
@@ -151,6 +178,36 @@ export function LayoutBuilderTool(): ReactNode {
                 max="64"
                 value={gap}
                 onChange={(e) => setGap(Number(e.target.value))}
+                className={styles.range}
+              />
+            </div>
+          </div>
+
+          {/* Width & Height controls */}
+          <div className={styles.row}>
+            <div className={styles.controlGroup}>
+              <label className={styles.label}>
+                {t.itemWidth}: <span className={styles.val}>{itemWidth}px</span>
+              </label>
+              <input
+                type="range"
+                min="40"
+                max="250"
+                value={itemWidth}
+                onChange={(e) => setItemWidth(Number(e.target.value))}
+                className={styles.range}
+              />
+            </div>
+            <div className={styles.controlGroup}>
+              <label className={styles.label}>
+                {t.itemHeight}: <span className={styles.val}>{itemHeight}px</span>
+              </label>
+              <input
+                type="range"
+                min="30"
+                max="200"
+                value={itemHeight}
+                onChange={(e) => setItemHeight(Number(e.target.value))}
                 className={styles.range}
               />
             </div>
@@ -289,7 +346,7 @@ export function LayoutBuilderTool(): ReactNode {
           <CardBody className={styles.previewContainer}>
             <div style={getContainerStyle()} className={styles.board}>
               {Array.from({ length: itemCount }).map((_, i) => (
-                <div key={i} className={styles.item}>
+                <div key={i} className={styles.item} style={getItemStyle()}>
                   {t.itemLabel} {i + 1}
                 </div>
               ))}
@@ -310,3 +367,4 @@ export function LayoutBuilderTool(): ReactNode {
     </div>
   );
 }
+
