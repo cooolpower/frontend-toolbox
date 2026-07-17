@@ -77,7 +77,6 @@ export function LayoutBuilderTool(): ReactNode {
         justifyContent: justifyContent,
         alignItems: alignItems,
         gap: `${gap}px`,
-        minHeight: "300px",
         width: "100%",
       };
     } else {
@@ -88,7 +87,6 @@ export function LayoutBuilderTool(): ReactNode {
         justifyItems: justifyItems,
         alignItems: alignItemsGrid,
         gap: `${gap}px`,
-        minHeight: "300px",
         width: "100%",
       };
     }
