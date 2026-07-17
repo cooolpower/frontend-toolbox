@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.errorBox {
+  padding: 0.875rem 1rem;
+  background-color: var(--danger-light);
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  color: var(--danger);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.analysisCard {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+  .analysisCard {
+    grid-column: span 1;
+  }
+}
+
+.headerBar {
+  border-left: 4px solid #ef4444; /* JWT Standard Red for Header */
+}
+
+.payloadBar {
+  border-left: 4px solid #a855f7; /* JWT Standard Purple for Payload */
+}
+
+.headerTitle {
+  font-size: 0.95rem;
+  color: #ef4444;
+}
+
+.payloadTitle {
+  font-size: 0.95rem;
+  color: #a855f7;
+}
+
+.analysisList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.analysisItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.analysisItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.analysisLabel {
+  font-weight: 600;
+  color: var(--fg-secondary);
+}
+
+.statusBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.statusValid {
+  background-color: var(--success-light);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.statusExpired {
+  background-color: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.statusNoExp {
+  background-color: var(--bg-tertiary);
+  color: var(--fg-tertiary);
+  border: 1px solid var(--border);
+}
+
+.timeLeftVal {
+  color: var(--warning);
+  font-weight: 700;
+}
+
+.codeText {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  background-color: var(--bg-tertiary);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.dateText {
+  font-weight: 500;
+  color: var(--fg-primary);
+}

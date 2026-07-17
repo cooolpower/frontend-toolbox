@@ -3,6 +3,8 @@ import { jsonToTsDefinition } from "../implementations/json-to-ts/definition";
 import { apiMockDefinition } from "../implementations/api-mock/definition";
 import { propsDiffDefinition } from "../implementations/props-diff/definition";
 import { cssShadowDefinition } from "../implementations/css-shadow/definition";
+import { layoutBuilderDefinition } from "../implementations/layout-builder/definition";
+import { jwtDecoderDefinition } from "../implementations/jwt-decoder/definition";
 
 // Central array registering all tools in the application.
 // To add a new tool, simply import its definition and add it to this list.
@@ -11,6 +13,8 @@ const TOOLS_REGISTRY: ToolDefinition[] = [
   apiMockDefinition,
   propsDiffDefinition,
   cssShadowDefinition,
+  layoutBuilderDefinition,
+  jwtDecoderDefinition,
 ];
 
 export function getAllTools(): ToolDefinition[] {
