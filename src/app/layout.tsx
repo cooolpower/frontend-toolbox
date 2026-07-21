@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/lib/i18n/language";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +19,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Frontend Toolbox - Advanced Developer Productivity Platform",
-  description: "A premium suite of tools designed specifically for React, TypeScript, and UI Engineering workflows. Free, fast, and secure.",
-  keywords: ["react tools", "typescript helpers", "css shadow generator", "props diff viewer", "frontend toolbox"],
+  description:
+    "A premium suite of tools designed specifically for React, TypeScript, and UI Engineering workflows. Free, fast, and secure.",
+  keywords: [
+    "react tools",
+    "typescript helpers",
+    "css shadow generator",
+    "props diff viewer",
+    "frontend toolbox",
+  ],
 };
 
 export default function RootLayout({
@@ -29,14 +37,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        {/* 2. 구글 애드센스 스크립트 추가 */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7653756543790258"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body>
         <LanguageProvider>
           <ThemeProvider>
             <div className="appContainer">
               <Header />
-              <main style={{ flex: 1 }}>
-                {children}
-              </main>
+              <main style={{ flex: 1 }}>{children}</main>
               <Footer />
             </div>
           </ThemeProvider>
@@ -45,4 +60,3 @@ export default function RootLayout({
     </html>
   );
 }
-
