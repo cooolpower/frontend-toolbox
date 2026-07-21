@@ -38,12 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        {/* 2. 구글 애드센스 스크립트 추가 */}
-        <Script
+        {/* 구글 애드센스 정적 스크립트 태그 */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7653756543790258"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
       </head>
       <body>
